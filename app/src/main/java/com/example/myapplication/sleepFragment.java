@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -11,6 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +36,10 @@ public class sleepFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    Button button;
+    ImageButton button;
+    ImageView imageView;
+    FrameLayout ss;
+    TextView textView,textView2;
     public sleepFragment() {
         // Required empty public constructor
     }
@@ -78,10 +87,41 @@ public class sleepFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =inflater.inflate(R.layout.fragment_sleep, container, false);
+        /*setHasOptionsMenu(true);
+        Bundle extra =getArguments();*/
+        //String message=this.getArguments().getString("message");
+        ss=(FrameLayout)v.findViewById(R.id.ss);
+        imageView=(ImageView)v.findViewById(R.id.imageButton);
+        button=(ImageButton) v.findViewById(R.id.sleep);
+        textView=(TextView)v.findViewById(R.id.textView2);
+        textView2=(TextView) v.findViewById(R.id.time);
+        /*if(wer.equals("0")){
+            imageView.setImageResource(R.drawable.sun);
+        }
+        else {
+            imageView.setImageResource(R.drawable.rain);
+        }*/
+        if(getArguments() != null) {
+            String re=getArguments().getString("you");
+            String hot=getArguments().getString("hot");
+            if(re.equals("0")) {
+                //imageView.setImageResource(R.drawable.sun2);
+                textView.setText("오늘은 화창해요!\n     섭씨 : "+hot+"C");
+                ss.setBackgroundResource(R.drawable.sun2);
+                //ss.setBackgroundColor(Color.parseColor("#00aee7"));
 
+            }
+            else if(re.equals("1")){
+                //imageView.setImageResource(R.drawable.rain);
+                ss.setBackgroundResource(R.drawable.rain3);
+                textView.setTextColor(Color.parseColor("#ffffff"));
+                textView2.setTextColor(Color.parseColor("#ffffff"));
+                textView.setText("오늘은 비가오네요 우산을 챙겨요\n                    섭씨 : "+hot+"C");
+                //ss.setBackgroundColor(Color.parseColor("#CECCD5"));
+            }
+        }
 
-        button=(Button) v.findViewById(R.id.sleep);
-
+        //textView.setText(message);
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override

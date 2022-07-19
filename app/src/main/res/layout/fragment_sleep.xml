@@ -1,55 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ss"
+    android:scaleType="fitCenter"
+    android:adjustViewBounds="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sleepFragment">
+    tools:context=".sleepFragment"
+    android:background="#CECCD5">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sleep"
-        android:text="잘꺼임"
-        />
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="일어난시간"
-        android:textSize="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".adoptable_problem">
 
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="%"
-        android:textSize="20dp"
-        android:id="@+id/em"
+        <ImageView
+            android:id="@+id/imageButton"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="날씨"
+            android:scaleType="fitCenter"
 
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="%"
-        android:textSize="20dp"
-        android:id="@+id/em1"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="%"
-        android:textSize="20dp"
-        android:id="@+id/em2"
+        <ImageButton
+            android:id="@+id/sleep"
+            style="?borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:contentDescription="하고 싶은 설명"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bed"
+            android:text="잘꺼임"
+            app:layout_constraintBottom_toTopOf="@+id/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
-        />
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="%"
-    android:textSize="20dp"
-    android:id="@+id/em3"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="졸려용"
+
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sleep" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="181dp"
+            android:layout_marginEnd="172dp"
+            android:text="오늘은 비가오네요 우산을 챙겨요"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/sleep"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

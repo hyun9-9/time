@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -36,7 +37,7 @@ public class HomeFragment extends Fragment {
 
 
     TextView time;
-    Button button;
+    ImageButton button;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -95,7 +96,7 @@ public class HomeFragment extends Fragment {
         //View v =inflater.inflate(R.layout.fragment_home, container, false);
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         time =(TextView) rootView.findViewById(R.id.time);
-        button=(Button) rootView.findViewById(R.id.button);
+        button=(ImageButton) rootView.findViewById(R.id.button);
 
 
         Bundle extra = getArguments();

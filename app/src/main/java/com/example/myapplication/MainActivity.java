@@ -1,9 +1,14 @@
 package com.example.myapplication;
 
+import static android.graphics.Color.BLACK;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -11,6 +16,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +27,8 @@ import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -47,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String>fcstTime1;
     ArrayList<String>fcstValue1;
     RequestQueue queue;
-
+    com.google.android.material.bottomnavigation.BottomNavigationView bar;
     HomeFragment homeFragment;
     InfoFragment infoFragment;
     SettingFragment settingFragment;
@@ -60,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        bar=(com.google.android.material.bottomnavigation.BottomNavigationView)findViewById(R.id.bottom_navigationview);
         homeFragment = new HomeFragment();
         infoFragment = new InfoFragment();
         settingFragment = new SettingFragment();
@@ -68,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         context_main=this;
         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
 
+
         NavigationBarView navigationBarView = findViewById(R.id.bottom_navigationview);
+        navigationBarView.setSelectedItemId(R.id.home);
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -88,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setFrag(0);
-
-
         json();
+
+
 
     }
 
@@ -164,7 +176,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        if(fcstValue.get(0).equals("강수있음")){
+        if(fcstValue.get(0).equals("강수없음")){
+            a=0;
+        }
+        else{
             a=1;
         }
 
@@ -204,17 +219,42 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public  void onFragmentChange(int index){
+        final GradientDrawable drawable = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.shape);
+
         in=index;
         if(index==0){
             getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
+
+            drawable.setColor(BLACK);
+            getWindow().setStatusBarColor(Color.BLACK);
+            bar.setItemBackground(drawable);
             mhandler.removeCallbacksAndMessages(null);
+
         }
         else if(index==1){
+            Bundle bundle=new Bundle();
+            bundle.putString("you",Integer.toString(a));
+            bundle.putString("hot",Integer.toString(hot));
+            //bundle.putString("you","1");
+            FragmentTransaction transaction =getSupportFragmentManager().beginTransaction();
+            sleepFragment =new sleepFragment();
+            sleepFragment.setArguments(bundle);
 
-
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.containers, sleepFragment).commit();
-
+            //transaction.replace(R.id.containers,sleep).commit();
+            //drawable.setColor(Color.parseColor("#A6673AB7"));
+            //drawable.setColor(Color.parseColor("#3F51B5"));
+            if(a==0) {
+                drawable.setColor(Color.parseColor("#3F51B5"));
+            }
+            else if(a==1){
+                drawable.setColor(Color.parseColor("#3F51B5"));
+            }
+            //drawable1.setColor(BLACK);
+            bar.setItemBackground(drawable);
+            getWindow().setStatusBarColor(Color.parseColor("#3F51B5"));
+            //getSupportFragmentManager().beginTransaction().replace(R.id.containers, sleepFragment).commit();
+            transaction.replace(R.id.containers,sleepFragment);
+            transaction.commit();
 
 
         }
