@@ -71,10 +71,16 @@ public class sleepFragment extends Fragment {
         }
     }
     MainActivity mainActivity;
+    SendEventListener sendEventListener;
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
         mainActivity=(MainActivity) getActivity();
+        try {
+            sendEventListener = (SendEventListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement SendEventListener");
+        }
     }
     @Override
     public void onDetach(){
@@ -91,7 +97,7 @@ public class sleepFragment extends Fragment {
         Bundle extra =getArguments();*/
         //String message=this.getArguments().getString("message");
         ss=(FrameLayout)v.findViewById(R.id.ss);
-        imageView=(ImageView)v.findViewById(R.id.imageButton);
+        //imageView=(ImageView)v.findViewById(R.id.imageButton);
         button=(ImageButton) v.findViewById(R.id.sleep);
         textView=(TextView)v.findViewById(R.id.textView2);
         textView2=(TextView) v.findViewById(R.id.time);
@@ -107,13 +113,13 @@ public class sleepFragment extends Fragment {
             if(re.equals("0")) {
                 //imageView.setImageResource(R.drawable.sun2);
                 textView.setText("오늘은 화창해요!\n     섭씨 : "+hot+"C");
-                ss.setBackgroundResource(R.drawable.sun2);
+                //ss.setBackgroundResource(R.drawable.sun2);
                 //ss.setBackgroundColor(Color.parseColor("#00aee7"));
 
             }
             else if(re.equals("1")){
                 //imageView.setImageResource(R.drawable.rain);
-                ss.setBackgroundResource(R.drawable.rain3);
+                //ss.setBackgroundResource(R.drawable.rain3);
                 textView.setTextColor(Color.parseColor("#ffffff"));
                 textView2.setTextColor(Color.parseColor("#ffffff"));
                 textView.setText("오늘은 비가오네요 우산을 챙겨요\n                    섭씨 : "+hot+"C");
@@ -127,12 +133,15 @@ public class sleepFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 long mNow =System.currentTimeMillis();
+                String l=Long.toString(mNow);
+
                 Date mReDate =new Date(mNow);
                 SimpleDateFormat mFormat=new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
                 String formatDate =mFormat.format(mReDate);
+                sendEventListener.sendMessage2(l,formatDate);
 
                 mainActivity.onFragmentChange(0);
-
+                mainActivity.down();
             }
         });
 

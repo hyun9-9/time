@@ -7,8 +7,8 @@
     android:adjustViewBounds="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sleepFragment"
-    android:background="#CECCD5">
+    tools:context=".sleepFragment">
+   <!-- android:background="#CECCD5"-->
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         tools:context=".adoptable_problem">
 
-        <ImageView
+        <!--  <ImageView
             android:id="@+id/imageButton"
             style="?borderlessButtonStyle"
             android:layout_width="match_parent"
@@ -28,21 +28,23 @@
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
         <ImageButton
             android:id="@+id/sleep"
             style="?borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_marginTop="216dp"
             android:contentDescription="하고 싶은 설명"
             android:scaleType="fitCenter"
+
             android:src="@drawable/bed"
             android:text="잘꺼임"
             app:layout_constraintBottom_toTopOf="@+id/time"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
@@ -50,11 +52,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="졸려용"
 
+            android:layout_marginBottom="164dp"
+            android:text="졸려용"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sleep" />
 
@@ -63,13 +67,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="181dp"
+            android:layout_marginTop="250dp"
             android:layout_marginEnd="172dp"
+            android:layout_marginBottom="50dp"
             android:text="오늘은 비가오네요 우산을 챙겨요"
             android:textSize="25dp"
             app:layout_constraintBottom_toTopOf="@+id/sleep"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

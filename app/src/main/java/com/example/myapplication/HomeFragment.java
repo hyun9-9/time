@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -72,10 +73,17 @@ public class HomeFragment extends Fragment {
 
     }
     MainActivity mainActivity;
+    SendEventListener sendEventListener;
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
         mainActivity=(MainActivity) getActivity();
+
+        try {
+            sendEventListener = (SendEventListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement SendEventListener");
+        }
     }
     @Override
     public void onDetach(){
@@ -90,29 +98,35 @@ public class HomeFragment extends Fragment {
 
 
 
-
-
-
         //View v =inflater.inflate(R.layout.fragment_home, container, false);
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         time =(TextView) rootView.findViewById(R.id.time);
         button=(ImageButton) rootView.findViewById(R.id.button);
 
-
-        Bundle extra = getArguments();
-        if(extra != null){
-            String formatDate = extra.getString("formatDate");
-            time.setText(" 잠든 시간 : "+formatDate);
+        if(getArguments() != null){
+            String sp=getArguments().getString("sleep");
+            time.setText(" 잠든 시간 : "+sp);
         }
+
+
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+
                 long mNow =System.currentTimeMillis();
+                String l=Long.toString(mNow);
+
                 Date mReDate =new Date(mNow);
                 SimpleDateFormat mFormat=new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
                 String formatDate =mFormat.format(mReDate);
+                sendEventListener.sendMessage(l,formatDate);
+
+
 
                 mainActivity.onFragmentChange(1);
                 mainActivity.up();
