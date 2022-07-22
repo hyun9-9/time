@@ -112,6 +112,8 @@ public class sleepFragment extends Fragment {
             String hot=getArguments().getString("hot");
             if(re.equals("0")) {
                 //imageView.setImageResource(R.drawable.sun2);
+                textView.setTextColor(Color.parseColor("#000000"));
+                textView2.setTextColor(Color.parseColor("#000000"));
                 textView.setText("오늘은 화창해요!\n     섭씨 : "+hot+"C");
                 //ss.setBackgroundResource(R.drawable.sun2);
                 //ss.setBackgroundColor(Color.parseColor("#00aee7"));
@@ -120,7 +122,7 @@ public class sleepFragment extends Fragment {
             else if(re.equals("1")){
                 //imageView.setImageResource(R.drawable.rain);
                 //ss.setBackgroundResource(R.drawable.rain3);
-                textView.setTextColor(Color.parseColor("#ffffff"));
+                textView.setTextColor(Color.parseColor("#000000"));
                 textView2.setTextColor(Color.parseColor("#ffffff"));
                 textView.setText("오늘은 비가오네요 우산을 챙겨요\n                    섭씨 : "+hot+"C");
                 //ss.setBackgroundColor(Color.parseColor("#CECCD5"));
@@ -136,7 +138,7 @@ public class sleepFragment extends Fragment {
                 String l=Long.toString(mNow);
 
                 Date mReDate =new Date(mNow);
-                SimpleDateFormat mFormat=new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+                SimpleDateFormat mFormat=new SimpleDateFormat("HH:mm:ss");
                 String formatDate =mFormat.format(mReDate);
                 sendEventListener.sendMessage2(l,formatDate);
 

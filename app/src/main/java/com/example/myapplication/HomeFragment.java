@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -105,7 +106,31 @@ public class HomeFragment extends Fragment {
 
         if(getArguments() != null){
             String sp=getArguments().getString("sleep");
-            time.setText(" 잠든 시간 : "+sp);
+            String wp=getArguments().getString("wp");
+            String c="";
+
+            SimpleDateFormat wp1=new SimpleDateFormat("HH:mm:ss");
+
+            if(sp!=null) {
+
+                try {
+                    Date d1 = wp1.parse(sp);
+                    Date d2 = wp1.parse(wp);
+                    Long diff = d1.getTime() - d2.getTime();
+                    Long lastdiff = diff / 1000;
+                    int sec=(int)(lastdiff/100)%60;
+                    int min=(int)(lastdiff/100)/60%60;
+                    int hour=(int)(lastdiff/100)/3600%24;
+                    String r=String.format("%02d:%02d:%02d",hour,min,sec);
+                    //time.setText(" 잠든 시간 : " + sp + "\n" + wp + "안녕"+lastdiff);
+                    time.setText(" 잠든 시간 : " + sp);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
         }
 
 
@@ -122,7 +147,7 @@ public class HomeFragment extends Fragment {
                 String l=Long.toString(mNow);
 
                 Date mReDate =new Date(mNow);
-                SimpleDateFormat mFormat=new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+                SimpleDateFormat mFormat=new SimpleDateFormat("HH:mm:ss");
                 String formatDate =mFormat.format(mReDate);
                 sendEventListener.sendMessage(l,formatDate);
 

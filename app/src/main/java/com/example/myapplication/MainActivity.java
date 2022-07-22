@@ -58,6 +58,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
     SettingFragment settingFragment;
     sleepFragment sleepFragment;
     String wp,wp2,st,st2;
-    int in=0,random_num,a=0,hot=0;
+    int in=0,random_num,a=0,hot=0,aq=0;
     public static Context context_main;
     Handler mhandler =new Handler(Looper.getMainLooper());
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         });
         setFrag(0);
         json(0);
-
+        json(1);
 
 
 
@@ -174,8 +175,8 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             @Override
             public void onErrorResponse(VolleyError error) {
                 //textOri.setText(error.toString());
-                Toast.makeText(MainActivity.this, "error: " + error.toString()
-                        , Toast.LENGTH_LONG).show();
+                /*Toast.makeText(MainActivity.this, "error: " + error.toString()
+                        , Toast.LENGTH_LONG).show();*/
             }
         });
 
@@ -240,12 +241,25 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 
             }
 
-            Toast.makeText(MainActivity.this, "fcstValue" + fcstValue.toString() + hot
-                    , Toast.LENGTH_LONG).show();
+            /*Toast.makeText(MainActivity.this, "fcstValue" + fcstValue.toString() + hot
+                    , Toast.LENGTH_LONG).show();*/
         }
         else if(num==1) {
-            Toast.makeText(MainActivity.this, "UsrCode" + UsrCode.toString() + Name + SleepTime + WakeUpTime + Alarm_Q + Alarm_A
-                    , Toast.LENGTH_LONG).show();
+            int s;
+
+            /*try {
+
+                s = Integer.parseInt(SleepTime);
+
+            } catch (NumberFormatException e) {
+
+            } catch (Exception e) {
+
+            }*/
+
+            /*Toast.makeText(MainActivity.this, "UsrCode" + UsrCode.toString() + Name + SleepTime + WakeUpTime + Alarm_Q + Alarm_A
+                    , Toast.LENGTH_LONG).show();*/
+
         }
         //textParse.setText(category.toString() + "\n" + fcstTime.toString() + "\n" + fcstValue.toString());
     }
@@ -276,6 +290,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         if(index==0){
             Bundle bundle=new Bundle();
             bundle.putString("sleep",st2);
+            bundle.putString("wp",wp2);
             FragmentTransaction transaction =getSupportFragmentManager().beginTransaction();
             homeFragment =new HomeFragment();
             homeFragment.setArguments(bundle);
@@ -288,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             getWindow().setStatusBarColor(Color.BLACK);
             bar.setItemBackground(drawable);
             bar.setItemIconTintList(getResources().getColorStateList(R.color.nav_color));
+            bar.setItemTextColor(getResources().getColorStateList(R.color.nav_color));
             mhandler.removeCallbacksAndMessages(null);
 
         }
@@ -312,9 +328,18 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             }*/
             //drawable1.setColor(BLACK);
 
-            bar.setItemIconTintList(getResources().getColorStateList(R.color.nav_color2));
 
-            layout.setBackgroundResource(R.drawable.sun3);
+            if(a==0) {
+                layout.setBackgroundResource(R.drawable.sun3);
+                bar.setItemIconTintList(getResources().getColorStateList(R.color.nav_color2));
+                bar.setItemTextColor(getResources().getColorStateList(R.color.nav_color2));
+            }
+            else if(a==1){
+                layout.setBackgroundResource(R.drawable.rain4);
+                bar.setItemIconTintList(getResources().getColorStateList(R.color.nav_color));
+                bar.setItemTextColor(getResources().getColorStateList(R.color.nav_color));
+
+            }
             //bar.setItemBackground(drawable);
             //getWindow().setStatusBarColor(Color.parseColor("#000000"));
             //getSupportFragmentManager().beginTransaction().replace(R.id.containers, sleepFragment).commit();
@@ -331,13 +356,34 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void up(){
     Random random=new Random();
-    random_num=random.nextInt(4)+1;
+    random_num=random.nextInt(3)+1;
+        //random_num=1;
         json(1);
+        get_q();
+        SimpleDateFormat wp1=new SimpleDateFormat("HH:mm:ss");
+        Long lastdiff= Long.valueOf(6);
+        if(SleepTime!=null&&st2!=null) {
+            try {
+                Date d1 = wp1.parse(SleepTime);
+                Date d2 = wp1.parse(wp2);
+                Long diff = d2.getTime() - d1.getTime();
+                lastdiff = diff / 1000;
 
 
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            /*Toast.makeText(MainActivity.this, "lastdiff  " + lastdiff +"  "+SleepTime +"  "+wp2
+                    , Toast.LENGTH_LONG).show();*/
+        }
     if(a==1){
 
         Intent intent = new Intent(getApplicationContext(), rain_sleep.class);
+        startActivity(intent);
+    }
+    else if(lastdiff<=5){
+
+        Intent intent = new Intent(getApplicationContext(), sleep_time.class);
         startActivity(intent);
     }
     else if(random_num==2){
@@ -350,11 +396,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         Intent intent = new Intent(getApplicationContext(), uncomfortable_night.class);
         startActivity(intent);
     }
-    else if(random_num==4){
 
-        Intent intent = new Intent(getApplicationContext(), sleep_time.class);
-        startActivity(intent);
-    }
     else if(random_num==1){
 
         Intent intent = new Intent(getApplicationContext(), goodmorning.class);
@@ -371,6 +413,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 
 
         mhandler.postDelayed(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
                 //Intent intent = new Intent(getApplicationContext(), quiz.class);
@@ -379,17 +422,13 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 //intent1.putExtra("val1",Integer.toString(con));
                 //startActivity(intent);
                 //finish();
-                try {
+                json(1);
 
-                    int aq = Integer.parseInt(Alarm_Q);
-                    aq++;
-                    Alarm_Q=Integer.toString(aq);
-                } catch (NumberFormatException e) {
+                /*Alarm_Q="1";
+                aq++;*/
 
-                } catch (Exception e) {
 
-                }
-                get();
+                get_q();
                 clickBtn();
             }
         }, random_num);
@@ -512,6 +551,38 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
+            else if(random_num==7) {
+                Intent intent = new Intent(this, bedding.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==8) {
+                Intent intent = new Intent(this, house.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==9) {
+                Intent intent = new Intent(this, ingredient.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==10) {
+                Intent intent = new Intent(this, nail.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
         }
         else if(to>=18&&to<=23){
             Random random=new Random();
@@ -533,7 +604,15 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 notificationManager.notify(mnow, notification);
             }
             else if(random_num==3) {
-                Intent intent = new Intent(this, seekbar_today.class);
+                Intent intent = new Intent(this, hbp.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==4) {
+                Intent intent = new Intent(this, diabetes.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
                 builder.setAutoCancel(true);
@@ -638,8 +717,14 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 
         HttpAsyncTask httpTask = new HttpAsyncTask(MainActivity.this);
         //httpTask.execute("http://ec2-52-78-121-204.ap-northeast-2.compute.amazonaws.com:8000/Update-UsrStatus/Information",UsrCode,Name,SleepTime,WakeUpTime,Alarm_Q,Alarm_A);
-        httpTask.execute("http://ec2-52-78-121-204.ap-northeast-2.compute.amazonaws.com:8000//Update-UsrSleep/Information",UsrCode,Name,SleepTime,WakeUpTime,Alarm_Q,Alarm_A);
+        httpTask.execute("http://ec2-52-78-121-204.ap-northeast-2.compute.amazonaws.com:8000/api/update_sleep_data_table",UsrCode,Name,SleepTime,WakeUpTime,Alarm_Q,Alarm_A);
                // }
+
+    }
+    public void get_q(){
+        HttpAsyncTask httpTask = new HttpAsyncTask(MainActivity.this);
+        httpTask.execute("http://ec2-52-78-121-204.ap-northeast-2.compute.amazonaws.com:8000/api/alarm_q_counter_up/Sunny8973",UsrCode,Name,SleepTime,WakeUpTime,Alarm_Q,Alarm_A);
+        // }
 
     }
 
@@ -648,16 +733,17 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 
         WakeUpTime=message;
         wp2=message2;
+
+        //Toast.makeText(this, "message:" + message, Toast.LENGTH_SHORT).show();
         get();
-        Toast.makeText(this, "message:" + message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void sendMessage2(String message,String message2) {
-        SleepTime=message;
+        SleepTime=message2;
         st2=message2;
 
-        Toast.makeText(this, "message:" + message, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "message:" + message, Toast.LENGTH_SHORT).show();
     }
     private class HttpAsyncTask extends AsyncTask<String, Void, String> {
 
@@ -692,7 +778,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             mainAct.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(mainAct, "Received!", Toast.LENGTH_LONG).show();
+                    /*Toast.makeText(mainAct, "Received!응애  "+aq, Toast.LENGTH_LONG).show();*/
                     try {
                         JSONArray json = new JSONArray(strJson);
                         mainAct.time.setText(json.toString(1));
