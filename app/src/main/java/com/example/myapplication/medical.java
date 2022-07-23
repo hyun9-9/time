@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -19,10 +21,11 @@ public class medical extends AppCompatActivity {
     Button head;
     Button body;
     Button leg;
-    Button left_arm;
-    Button right_arm;
+    Button arm;
+
 
     TextToSpeech tts;
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,8 @@ public class medical extends AppCompatActivity {
         head= findViewById(R.id.head);
         body= findViewById(R.id.body);
         leg= findViewById(R.id.leg);
-        left_arm= findViewById(R.id.left_arm);
-        right_arm= findViewById(R.id.right_arm);
+        arm= findViewById(R.id.arm);
+
 
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener(){    //알림 tts 부분
             @Override
@@ -53,8 +56,11 @@ public class medical extends AppCompatActivity {
         }, 100);
 
         head.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_E("91");
 
                 //머리가 아프다는걸 웹사이트로 전송
                 finish();
@@ -67,13 +73,7 @@ public class medical extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();
             }
         });
-        right_arm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();
-            }
-        });
-        left_arm.setOnClickListener(new View.OnClickListener() {
+        arm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();

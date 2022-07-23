@@ -51,6 +51,7 @@ public class bedding_old extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), bedding_wash.class);
                 startActivity(intent);
                 //세탁을 선택했으므로 bedding_wash로 전환
+                finish();
             }
         });
 
@@ -60,6 +61,7 @@ public class bedding_old extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), bedding_dry.class);
                 startActivity(intent);
                 //건조를 선택했으므로 bedding_dry로 전환
+                finish();
             }
         });
     }

@@ -3,31 +3,116 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/good_morning.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/ic_flame_surprised_person.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_bed.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_bed_cleaning.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_bed_drying.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_body.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_cancel.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_cant.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_counselor.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_deadline.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_diabetes.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_dont.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_emergency_call.xml" value="0.2435" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_emergency_messege.xml" value="0.2435" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_full.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_good_idea.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_good_morning.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_good_sleep.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_hbp.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_hbp2.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_house_clean.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_house_fix.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_house_problem.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_house_question.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_info.xml" value="0.2145" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_ingredient.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_lack.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_level_high.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_level_low.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_long.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_lunch.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_lunch_problem.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_nail.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_o.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_on_time.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_perform.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_plan.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_problem.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_rainy.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_relax.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sad.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_short.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sick.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sleep_problem.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sleep_time.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_smile.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_stretch.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sugar_level.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_sunny.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_today.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_washing_machine.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/modified_x.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/drawable/rounded_corner.xml" value="0.248" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_adoptable_problem.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_bedding.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_bedding_dry.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_bedding_old.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_bedding_wash.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_clean_manual.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_comfortable_night.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_daylight_problem.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_diabetes.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_diabetes_bad.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_diabetes_didnt.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_diabetes_level_test.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_good_word.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_goodmorning.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_have_plan.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_hbp.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_hbp_bad.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_hbp_didnt.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_hbp_level_test.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_house.xml" value="0.33" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_house_problem.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_ingredient.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_lunch.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_lunch_problem.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_main.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_medical.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_nail.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_nail_long.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_quiz.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_rain_sleep.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_read_book.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_seekbar_today.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_sleep_problem.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_sleep_time.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_stroll.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_today_ending.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_uncomfortable_night.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/activity_weather1.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/fragment_home.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/fragment_info.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/fragment_setting.xml" value="0.1" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/layout/fragment_sleep.xml" value="0.35688405797101447" />
+        <entry key="..\:/Users/kjh14/AndroidStudioProjects/time/app/src/main/res/menu/bottom_menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/ic_baseline_cleaning_services_24.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/ic_head.xml" value="0.3365" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/nav_color.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/rounded.xml" value="0.1025" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/shape.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_adoptable_problem.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_comfortable_night.xml" value="0.190625" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_good_word.xml" value="0.17806484295845998" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_lunch_problem.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_medical.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_quiz.xml" value="0.1757852077001013" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_read_book.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_seekbar_today.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sleep_problem.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sleep_time.xml" value="0.190625" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_stroll.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_today_ending.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_uncomfortable_night.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_weather1.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_info.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_setting.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_sleep.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/menu/bottom_menu.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_sleep.xml" value="0.16869300911854104" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

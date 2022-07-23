@@ -51,6 +51,7 @@ public class diabetes extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), diabetes_level_test.class);
                 startActivity(intent);
                 //혈당 수치 측정 끝나서 문제 있는지로 넘어감
+                finish();
             }
         });
 
@@ -60,6 +61,7 @@ public class diabetes extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), diabetes_didnt.class);
                 startActivity(intent);
                 //혈당 수치 측정을 하지 않아서 하는 방법으로 넘어감
+                finish();
             }
         });
     }

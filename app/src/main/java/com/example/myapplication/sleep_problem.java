@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -18,6 +20,7 @@ public class sleep_problem extends AppCompatActivity {
     Button home;
     Button body;
     TextToSpeech tts;
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +49,12 @@ public class sleep_problem extends AppCompatActivity {
         }, 100);
 
         home.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-
-                //집에 문제가 있다는걸 전송하는 코드 필요
+                communication.up_A();
+                communication.get_up("6");
+                //집에 문제 코드 필요
                 finish();
             }
         });

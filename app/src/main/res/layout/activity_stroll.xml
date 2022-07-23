@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".stroll">
+    tools:context=".stroll"
+    android:background="@drawable/trail">
 
     <TextView
         android:id="@+id/walk_text"
@@ -12,6 +13,8 @@
         android:layout_height="79dp"
         android:gravity="center"
         android:text="지금 시간이 있다면, 동네를 한바퀴 돌아보는건 어때요?"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,14 +25,15 @@
 
     <ImageView
         android:id="@+id/walk_image"
-        android:layout_width="387dp"
-        android:layout_height="535dp"
+        android:layout_width="169dp"
+        android:layout_height="251dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709"
-        app:srcCompat="@drawable/ic_baseline_directions_walk_24" />
+        app:layout_constraintVertical_bias="0.816"
+        app:srcCompat="@drawable/walker" />
 
     <Button
         style="?borderlessButtonStyle"

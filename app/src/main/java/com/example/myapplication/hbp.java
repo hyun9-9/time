@@ -51,6 +51,7 @@ public class hbp extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), hbp_level_test.class);
                 startActivity(intent);
                 //측정했으니깐 수치 확인 페이지로 전환
+                finish();
             }
         });
 
@@ -60,6 +61,7 @@ public class hbp extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), hbp_didnt.class);
                 startActivity(intent);
                 //혈압을 측정하지 않아서 hbp_didnt로 전환
+                finish();
             }
         });
     }

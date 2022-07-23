@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -18,6 +20,7 @@ public class daylight_problem extends AppCompatActivity {
     Button counseling;
     Button hurt;
     TextToSpeech tts;
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,11 @@ public class daylight_problem extends AppCompatActivity {
         }, 100);
 
         counseling.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_E("61");
                 //상담 신청 정보 서버로 전송
                 finish();
             }

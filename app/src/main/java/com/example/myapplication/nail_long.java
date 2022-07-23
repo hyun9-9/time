@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -17,6 +19,7 @@ public class nail_long extends AppCompatActivity {
     TextView nail_content;
 
     TextToSpeech tts;
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,11 @@ public class nail_long extends AppCompatActivity {
         }, 100);
 
         nail_button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("1");
                 //손발톱 정돈 했으니 청결/상태 점수 up?
                 finish();
             }

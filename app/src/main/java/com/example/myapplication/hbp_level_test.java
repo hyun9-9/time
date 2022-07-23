@@ -19,6 +19,8 @@ public class hbp_level_test extends AppCompatActivity {
     Button hbp_level_no;
     TextToSpeech tts;
 
+    communication communication = new communication();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,8 @@ public class hbp_level_test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //혈당이 정상이니깐 건강이나 상태점수 up?
+                communication.up_A();
+                communication.get_up("1");
                 finish();
             }
         });
@@ -59,6 +63,7 @@ public class hbp_level_test extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), hbp_bad.class);
                 startActivity(intent);
                 //혈압 수치가 안좋아서 hbp_bad로 전환
+                finish();
             }
         });
     }

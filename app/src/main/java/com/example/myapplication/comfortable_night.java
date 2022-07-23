@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -18,6 +20,8 @@ public class comfortable_night extends AppCompatActivity {
     Button good;
     Button bad;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,11 @@ public class comfortable_night extends AppCompatActivity {
         }, 100);
 
         good.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("1");
                 //잘 잔다는 상태 점수 up?
                 finish();
             }

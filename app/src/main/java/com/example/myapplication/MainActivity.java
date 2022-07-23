@@ -338,15 +338,12 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 layout.setBackgroundResource(R.drawable.rain4);
                 bar.setItemIconTintList(getResources().getColorStateList(R.color.nav_color));
                 bar.setItemTextColor(getResources().getColorStateList(R.color.nav_color));
-
             }
             //bar.setItemBackground(drawable);
             //getWindow().setStatusBarColor(Color.parseColor("#000000"));
             //getSupportFragmentManager().beginTransaction().replace(R.id.containers, sleepFragment).commit();
             transaction.replace(R.id.containers,sleepFragment);
             transaction.commit();
-
-
         }
     }
 
@@ -470,8 +467,8 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         int mnow= Long.valueOf(mNow).intValue();
         //상태바를 드래그하여 아래로 내리면 보이는
         //알림창(확장 상태바)의 설정
-        builder.setContentTitle("Title");//알림창 제목
-        builder.setContentText("Messages....");//알림창 내용
+        builder.setContentTitle("새로운 알림");//알림창 제목
+        builder.setContentText("클릭해주세요");//알림창 내용
         //알림창의 큰 이미지
         //Bitmap bm= BitmapFactory.decodeResource(getResources(),R.drawable.gametitle_09);
         //builder.setLargeIcon(bm);//매개변수가 Bitmap을 줘야한다.
@@ -513,14 +510,6 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             }
             else if(random_num==3) {
                 Intent intent = new Intent(this, read_book.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                builder.setContentIntent(pendingIntent);
-                builder.setAutoCancel(true);
-                Notification notification = builder.build();
-                notificationManager.notify(mnow, notification);
-            }
-            else if(random_num==4) {
-                Intent intent = new Intent(this, call_to_other.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
                 builder.setAutoCancel(true);

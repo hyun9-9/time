@@ -5,10 +5,92 @@
     android:layout_height="match_parent"
     tools:context=".SettingFragment">
 
+
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="setting" />
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ADOPTABLE_PROBLEM:\n
+                a href=&quot;https://www.flaticon.com/free-icons/question&quot; title=&quot;question icons&quot;>Question icons created by ultimatearm - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/refuse&quot; title=&quot;refuse icons&quot;>Refuse icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sick&quot; title=&quot;sick icons&quot;>Sick icons created by AomAm - Flaticon\n\nBEDDING:\n
+                a href=&quot;https://www.flaticon.com/free-icons/clean&quot; title=&quot;clean icons&quot;>Clean icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/overdue&quot; title=&quot;overdue icons&quot;>Overdue icons created by Flat Icons - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/on-time&quot; title=&quot;on time icons&quot;>On time icons created by Freepik - Flaticon\n\nBEDDING_OLD:\n
+                a href=&quot;https://www.flaticon.com/free-icons/room&quot; title=&quot;room icons&quot;>Room icons created by Flat Icons - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/wash&quot; title=&quot;wash icons&quot;>Wash icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/laundry&quot; title=&quot;laundry icons&quot;>Laundry icons created by Freepik - Flaticon\n\nCOMFORTABLE_NIGHT:\n
+                a href=&quot;https://www.flaticon.com/free-icons/sleeping&quot; title=&quot;sleeping icons&quot;>Sleeping icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/wake-up&quot; title=&quot;wake-up icons&quot;>Wake-up icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sleep&quot; title=&quot;sleep icons&quot;>Sleep icons created by Flat Icons - Flaticon\n\nDAYLIGHT_PROBLEM:\n
+                a href=&quot;https://www.flaticon.com/free-icons/question&quot; title=&quot;question icons&quot;>Question icons created by ultimatearm - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/counselor&quot; title=&quot;counselor icons&quot;>Counselor icons created by Flat Icons - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sick&quot; title=&quot;sick icons&quot;>Sick icons created by AomAm - Flaticon\n\nDIABETES:\n
+                a href=&quot;https://www.flaticon.com/free-icons/diabetes&quot; title=&quot;diabetes icons&quot;>Diabetes icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/correct&quot; title=&quot;correct icons&quot;>Correct icons created by Pixel perfect - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/quit&quot; title=&quot;quit icons&quot;>Quit icons created by Pixel perfect - Flaticon\n\nDIABETES_LEVEL_TEST:\n
+                a href=&quot;https://www.flaticon.com/free-icons/diabetes&quot; title=&quot;diabetes icons&quot;>Diabetes icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/performance&quot; title=&quot;performance icons&quot;>Performance icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/speedometer&quot; title=&quot;speedometer icons&quot;>Speedometer icons created by Freepik - Flaticon\n\nGOOD_MORNING:\n
+                a href=&quot;https://www.flaticon.com/free-icons/morning&quot; title=&quot;morning icons&quot;>Morning icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/wake-up&quot; title=&quot;wake-up icons&quot;>Wake-up icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sleep&quot; title=&quot;sleep icons&quot;>Sleep icons created by Flat Icons - Flaticon\n\nHAVE_PLAN:\n
+                a href=&quot;https://www.flaticon.com/free-icons/strategic-plan&quot; title=&quot;strategic plan icons&quot;>Strategic plan icons created by smashingstocks - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/evaluation&quot; title=&quot;evaluation icons&quot;>Evaluation icons created by Eucalyp - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/refuse&quot; title=&quot;refuse icons&quot;>Refuse icons created by Freepik - Flaticon\n\nHBP:\n
+                a href=&quot;https://www.flaticon.com/free-icons/hypertension&quot; title=&quot;hypertension icons&quot;>Hypertension icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/correct&quot; title=&quot;correct icons&quot;>Correct icons created by Pixel perfect - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/quit&quot; title=&quot;quit icons&quot;>Quit icons created by Pixel perfect - Flaticon\n\nHBP_LEVEL_TEST:\n
+                a href=&quot;https://www.flaticon.com/free-icons/hypertension&quot; title=&quot;hypertension icons&quot;>Hypertension icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/performance&quot; title=&quot;performance icons&quot;>Performance icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/speedometer&quot; title=&quot;speedometer icons&quot;>Speedometer icons created by Freepik - Flaticon\n\nHOUSE:\n
+                a href=&quot;https://www.flaticon.com/free-icons/address&quot; title=&quot;address icons&quot;>Address icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/correct&quot; title=&quot;correct icons&quot;>Correct icons created by Pixel perfect - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/quit&quot; title=&quot;quit icons&quot;>Quit icons created by Pixel perfect - Flaticon\n\nHOUSE_PROBLEM:\n
+                a href=&quot;https://www.flaticon.com/free-icons/address&quot; title=&quot;address icons&quot;>Address icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/performance&quot; title=&quot;performance icons&quot;>Performance icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/speedometer&quot; title=&quot;speedometer icons&quot;>Speedometer icons created by Freepik - Flaticon\n\nINGREDIENT:\n
+                a href=&quot;https://www.flaticon.com/free-icons/harvest&quot; title=&quot;harvest icons&quot;>Harvest icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/supermarket&quot; title=&quot;supermarket icons&quot;>Supermarket icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/shopping&quot; title=&quot;shopping icons&quot;>Shopping icons created by Freepik - Flaticon\n\nLUNCH:\n
+                a href=&quot;https://www.flaticon.com/free-icons/eat&quot; title=&quot;eat icons&quot;>Eat icons created by Flat Icons - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/correct&quot; title=&quot;correct icons&quot;>Correct icons created by Pixel perfect - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/quit&quot; title=&quot;quit icons&quot;>Quit icons created by Pixel perfect - Flaticon\n\nLUNCH_PROBLEM:\n
+                a href=&quot;https://www.flaticon.com/free-icons/no-eating&quot; title=&quot;no-eating icons&quot;>No-eating icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/covid-19&quot; title=&quot;covid-19 icons&quot;>Covid-19 icons created by AomAm - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/time-travel&quot; title=&quot;time travel icons&quot;>Time travel icons created by Darius Dan - Flaticon\n\nMEDICAL:\n
+                a href=&quot;https://www.flaticon.com/free-icons/body&quot; title=&quot;body icons&quot;>Body icons created by Freepik - Flaticon\n\nNAIL:\n
+                a href=&quot;https://www.flaticon.com/free-icons/nail&quot; title=&quot;nail icons&quot;>Nail icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/measuring-tape&quot; title=&quot;measuring tape icons&quot;>Measuring tape icons created by Muhammad_Usman - Flaticon\n\nRAIN_SLEEP:\n
+                a href=&quot;https://www.flaticon.com/free-icons/rainy&quot; title=&quot;rainy icons&quot;>Rainy icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/wake-up&quot; title=&quot;wake-up icons&quot;>Wake-up icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sleep&quot; title=&quot;sleep icons&quot;>Sleep icons created by Flat Icons - Flaticon\n\nSLEEP_PROBLEM:\n
+                a href=&quot;https://www.flaticon.com/free-icons/question&quot; title=&quot;question icons&quot;>Question icons created by ultimatearm - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/address&quot; title=&quot;address icons&quot;>Address icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sick&quot; title=&quot;sick icons&quot;>Sick icons created by AomAm - Flaticon\n\nSLEEP_TIME:\n
+                a href=&quot;https://www.flaticon.com/free-icons/wake-up&quot; title=&quot;wake-up icons&quot;>Wake-up icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sick&quot; title=&quot;sick icons&quot;>Sick icons created by AomAm - Flaticon\n\nsSTROLL:\n
+                a href=&quot;https://www.flaticon.com/free-icons/walk&quot; title=&quot;walk icons&quot;>Walk icons created by Freepik - Flaticon\n\nTODAY_ENDING:\n
+                a href=&quot;https://www.flaticon.com/free-icons/calendar&quot; title=&quot;calendar icons&quot;>Calendar icons created by Smashicons - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/smile&quot; title=&quot;smile icons&quot;>Smile icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sad&quot; title=&quot;sad icons&quot;>Sad icons created by Freepik - Flaticon\n\nUNCOMFORTABLE_NIGHT:\n
+                a href=&quot;https://www.flaticon.com/free-icons/question&quot; title=&quot;question icons&quot;>Question icons created by ultimatearm - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/wake-up&quot; title=&quot;wake-up icons&quot;>Wake-up icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/sick&quot; title=&quot;sick icons&quot;>Sick icons created by AomAm - Flaticon\n\nWEATHER_1:\n
+                a href=&quot;https://www.flaticon.com/free-icons/sun&quot; title=&quot;sun icons&quot;>Sun icons created by Freepik - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/idea&quot; title=&quot;idea icons&quot;>Idea icons created by Muhammad_Usman - Flaticon\n
+                a href=&quot;https://www.flaticon.com/free-icons/work&quot; title=&quot;work icons&quot;>Work icons created by monkik - Flaticon\n\nSOS:\n
+                a href=&quot;https://www.flaticon.com/free-icons/emergency&quot; title=&quot;emergency icons&quot;>Emergency icons created by Vitaly Gorbachev - Flaticon\n\nEMERGENCY:\n
+                a href=&quot;https://www.flaticon.com/free-icons/emergency&quot; title=&quot;emergency icons&quot;>Emergency icons created by Freepik - Flaticon\n\n" />
+        </ScrollView>
+
+    </HorizontalScrollView>
 
 </FrameLayout>

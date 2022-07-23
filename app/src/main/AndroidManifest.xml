@@ -53,9 +53,6 @@
             android:name=".have_plan"
             android:exported="false" />
         <activity
-            android:name=".call_to_other"
-            android:exported="false" />
-        <activity
             android:name=".read_book"
             android:exported="false" />
         <activity

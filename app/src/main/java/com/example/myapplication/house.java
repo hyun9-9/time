@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,6 +20,8 @@ public class house extends AppCompatActivity {
     Button house_yes;
     Button house_no;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +55,16 @@ public class house extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), house_problem.class);
                 startActivity(intent);
                 //집에 문제가 어떤 문제인지 확인하기 위해 house_problem으로 전환
+                finish();
             }
         });
 
         house_no.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("5");
                 //집에 문제가 없으므로 환경점수up?
                 finish();
             }

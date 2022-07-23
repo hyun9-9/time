@@ -29,7 +29,7 @@
         android:layout_height="521dp"
         android:background="@drawable/rounded_corner"
         android:gravity="center_vertical"
-        android:text="•흰밥이나 흰빵보다는 잡곡밥과 통밀빵\n  을 먹는 것이 좋다.\n•채소류, 해조류 등 식이섬유소 함량이 \n  높은 식품을먹는다  \n•주스보다는 생과일과 생채소 형태로 \n  그중에서도 당도가 높은 것은 피하도록 \n  한다. \n•식후 1시간 동안은 운동하도록 한다."
+        android:text="•흰밥이나 흰빵보다는 잡곡밥과 통밀빵\n을 먹는 것이 좋다.\n•채소류, 해조류 등 식이섬유소 함량이 \n높은 식품을먹는다  \n•주스보다는 생과일과 생채소 형태로 \n그중에서도 당도가 높은 것은 피하도록 \n한다. \n•식후 1시간 동안은 운동하도록 한다."
         android:textColor="#DFDDDD"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

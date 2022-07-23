@@ -1,12 +1,16 @@
 package com.example.myapplication;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +59,41 @@ public class InfoFragment extends Fragment {
         }
     }
 
+    Button emergency_call;
+    Button emergency_message;
+
+    communication communication = new communication();
+    MainActivity main;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false);
+
+        View v =inflater.inflate(R.layout.fragment_info, container, false);
+        emergency_call = v.findViewById(R.id.emergency_call);
+        emergency_message = v.findViewById(R.id.emergency_message);
+
+        emergency_call.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("911");
+            }
+        });
+
+        emergency_message.setOnClickListener(new View.OnClickListener() {
+            //@RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();
+                /*communication.up_A();
+                communication.get_up("5");*/
+            }
+        });
+
+
+        return v;
     }
 }

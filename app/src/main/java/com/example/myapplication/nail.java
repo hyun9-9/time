@@ -1,8 +1,10 @@
 package com.example.myapplication;;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,6 +20,8 @@ public class nail extends AppCompatActivity {
     Button nail_l;
     Button nail_sh;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +55,16 @@ public class nail extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), nail_long.class);
                 startActivity(intent);
                 //손발톱이 기니깐 nail_long으로 전환
+                finish();
             }
         });
 
         nail_sh.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("1");
                 //손발톱 관리가 잘 되었으므로 상태점수 up?
                 finish();
             }

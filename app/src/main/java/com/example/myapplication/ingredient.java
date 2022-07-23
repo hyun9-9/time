@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,6 +20,8 @@ public class ingredient extends AppCompatActivity {
     Button ingredient_full;
     Button ingredient_lack;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +50,23 @@ public class ingredient extends AppCompatActivity {
         }, 100);
 
         ingredient_full.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("5");
                 //곳간이 차있으니깐 환경점수 up?
                 finish();
             }
         });
 
         ingredient_lack.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 //재료가 없으므로 사야한다고 관리자 웹으로 알림
+                communication.up_A();
+                communication.get_E("62");
                 finish();
             }
         });

@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".rain_sleep">
+    tools:context=".rain_sleep"
+    android:background="@drawable/watercolor2">
 
     <Button
         android:id="@+id/dont_have"
-        android:layout_width="158dp"
-        android:layout_height="292dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="52dp"
-        android:text="아니요, 불편함 없이 잘 잤어요"
+        android:layout_width="160dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="92dp"
+        android:alpha="0.9"
+        android:drawableTop="@drawable/modified_stretch"
+        android:text="아니요,\n잘 잤어요"
         android:textSize="18sp"
         android:gravity="center"
         android:textAlignment="center"
@@ -21,11 +24,13 @@
 
     <Button
         android:id="@+id/have"
-        android:layout_width="158dp"
-        android:layout_height="292dp"
+        android:layout_width="160dp"
+        android:layout_height="175dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="52dp"
-        android:text="네, 불편함이 있어요"
+        android:layout_marginBottom="92dp"
+        android:alpha="0.9"
+        android:drawableTop="@drawable/modified_sleep_problem"
+        android:text="불편해서 \n잘 못 잤어요"
         android:textSize="18sp"
         android:gravity="center"
         android:textAlignment="center"
@@ -34,16 +39,22 @@
 
     <TextView
         android:id="@+id/rainy_sleep"
-        android:layout_width="353dp"
-        android:layout_height="284dp"
-        android:text="밤새 비가 많이 왔는데, 자는데 불편함은 없었나요?"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@drawable/rounded_corner"
+        android:drawableTop="@drawable/modified_rainy"
+        android:textColor="@color/white"
+        android:text="밤새 비가 많이 왔는데,\n자는데 불편함은 없었나요?"
         android:textSize="30sp"
         android:gravity="center"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.152" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

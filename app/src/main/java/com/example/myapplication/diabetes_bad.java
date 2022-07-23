@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -17,6 +19,7 @@ public class diabetes_bad extends AppCompatActivity {
     TextView diabetes_content;
 
     TextToSpeech tts;
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,12 @@ public class diabetes_bad extends AppCompatActivity {
         }, 100);
 
         diabetes.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("2");
+                communication.get_E("96");
                 //혈당 나쁨 건강점수 down?
                 finish();
             }

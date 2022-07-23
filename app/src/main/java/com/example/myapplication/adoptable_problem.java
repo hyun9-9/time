@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -18,7 +20,7 @@ public class adoptable_problem extends AppCompatActivity {
     Button no_reason;
     Button hurt;
     TextToSpeech tts;
-
+    communication communication =new communication();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +48,12 @@ public class adoptable_problem extends AppCompatActivity {
         }, 100);
 
         no_reason.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                //이유 없는 취소 상태점수 down
+                communication.up_A();
+                communication.get_up("4");
+                //이유 없는 취소 활동점수 down
                 finish();
             }
         });

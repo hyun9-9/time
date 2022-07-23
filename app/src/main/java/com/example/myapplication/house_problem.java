@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,6 +20,8 @@ public class house_problem extends AppCompatActivity {
     Button house_clean;
     Button house_fix;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,11 @@ public class house_problem extends AppCompatActivity {
         }, 100);
 
         house_clean.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_E("64");
 
                 //혼자 해결이 불가한 청소 문제이므로 관리자한테 알림보낼것
                 finish();
@@ -55,8 +62,11 @@ public class house_problem extends AppCompatActivity {
         });
 
         house_fix.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_E("63");
                 //혼자 해결이 불가한 수리 문제이므로 관리자에게 알림 전송
                 finish();
             }

@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,6 +20,8 @@ public class diabetes_level_test extends AppCompatActivity {
     Button diabetes_level_yes;
     Button diabetes_level_no;
     TextToSpeech tts;
+
+    communication communication = new communication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,11 @@ public class diabetes_level_test extends AppCompatActivity {
         }, 100);
 
         diabetes_level_yes.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                communication.up_A();
+                communication.get_up("1");
                 //혈당이 정상이니깐 건강/상태 점수 up?
                 finish();
             }
@@ -59,6 +66,7 @@ public class diabetes_level_test extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), diabetes_bad.class);
                 startActivity(intent);
                 //혈당에 문제가 있어서 diabetes_bad로 전환
+                finish();
             }
         });
     }

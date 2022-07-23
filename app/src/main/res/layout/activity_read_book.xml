@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".read_book">
+    tools:context=".read_book"
+    android:background="@drawable/books">
 
     <TextView
         android:id="@+id/book_text"
@@ -12,6 +13,8 @@
         android:layout_height="79dp"
         android:gravity="center"
         android:text="독서와 함께 사색을 해보는 여유를 가지는 것은 어때요?"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,13 +25,14 @@
 
     <ImageView
         android:id="@+id/book_image"
-        android:layout_width="387dp"
-        android:layout_height="535dp"
+        android:layout_width="334dp"
+        android:layout_height="399dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709"
+        app:layout_constraintVertical_bias="0.614"
         app:srcCompat="@drawable/ic_baseline_menu_book_24" />
 
     <Button

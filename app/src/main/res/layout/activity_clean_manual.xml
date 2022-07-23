@@ -4,35 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".clean_manual">
+    tools:context=".clean_manual"
+    android:background="@drawable/cleaning">
 
     <TextView
-        android:id="@+id/clean_text"
+        android:id="@+id/clean_title"
         android:layout_width="340dp"
         android:layout_height="79dp"
         android:gravity="center"
-        android:text="너는 지금 청소방법이 보인다"
+        android:text="청소하기"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="25sp"
+        android:textColor="#DFDDDD"
+        android:background="@drawable/rounded_corner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.063" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="387dp"
-        android:layout_height="535dp"
+    <TextView
+        android:id="@+id/clean_content"
+        android:layout_width="340dp"
+        android:layout_height="521dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="#DFDDDD"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709"
-        app:srcCompat="@drawable/ic_baseline_cleaning_services_24" />
+        app:layout_constraintVertical_bias="0.704" />
 
     <Button
-        android:id="@+id/clean"
+        android:id="@+id/clean_button"
         style="?borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
