@@ -63,7 +63,6 @@ public class InfoFragment extends Fragment {
     Button emergency_message;
 
     communication communication = new communication();
-    MainActivity main;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,7 +78,7 @@ public class InfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 communication.up_A();
-                communication.get_up("911");
+                communication.get_E("99");
             }
         });
 
@@ -89,7 +88,7 @@ public class InfoFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();
                 /*communication.up_A();
-                communication.get_up("5");*/
+                communication.get_up("");*/
             }
         });
 

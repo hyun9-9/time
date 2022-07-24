@@ -66,6 +66,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements SendEventListener{
 
+    androidx.constraintlayout.widget.ConstraintLayout layout;
     ArrayList<String> category;
     ArrayList<String>fcstTime;
     ArrayList<String>fcstValue;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bar=(com.google.android.material.bottomnavigation.BottomNavigationView)findViewById(R.id.bottom_navigationview);
+        layout=(androidx.constraintlayout.widget.ConstraintLayout) findViewById(R.id.main);
         homeFragment = new HomeFragment();
         infoFragment = new InfoFragment();
         settingFragment = new SettingFragment();
@@ -276,6 +278,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 break;
             case 2:
                 getSupportFragmentManager().beginTransaction().replace(R.id.containers, infoFragment).commit();
+                layout.setBackgroundResource(R.drawable.watercolor2);
                 break;
         }
     }
@@ -284,10 +287,18 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
     @RequiresApi(api = Build.VERSION_CODES.N)
     public  void onFragmentChange(int index){
         final GradientDrawable drawable = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.shape);
-        androidx.constraintlayout.widget.ConstraintLayout layout;
-        layout=(androidx.constraintlayout.widget.ConstraintLayout) findViewById(R.id.main);
+
         in=index;
         if(index==0){
+
+            Bundle bundle2=new Bundle();
+            bundle2.putString("color", "0");
+            FragmentTransaction transaction2 =getSupportFragmentManager().beginTransaction();
+            settingFragment =new SettingFragment();
+            settingFragment.setArguments(bundle2);
+            transaction2.replace(R.id.containers,settingFragment);
+            transaction2.commit();
+
             Bundle bundle=new Bundle();
             bundle.putString("sleep",st2);
             bundle.putString("wp",wp2);
@@ -306,8 +317,19 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             bar.setItemTextColor(getResources().getColorStateList(R.color.nav_color));
             mhandler.removeCallbacksAndMessages(null);
 
+
+
         }
         else if(index==1){
+
+            Bundle bundle2=new Bundle();
+            bundle2.putString("color", "1");
+            FragmentTransaction transaction2 =getSupportFragmentManager().beginTransaction();
+            settingFragment =new SettingFragment();
+            settingFragment.setArguments(bundle2);
+            transaction2.replace(R.id.containers,settingFragment);
+            transaction2.commit();
+
             Bundle bundle=new Bundle();
             bundle.putString("you",Integer.toString(a));
             bundle.putString("hot",Integer.toString(hot));
@@ -403,7 +425,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 }
     public void Alarm(){
         Random random=new Random();
-        random_num=random.nextInt(10)+10;
+        random_num=random.nextInt(20)+10;
         random_num*=1000;
 
 
@@ -489,9 +511,9 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         catch (Exception e){
 
         }
-        if(to>=6&&to<=17) {
+        if(to>=6&&to<=11) {
             Random random=new Random();
-            random_num=random.nextInt(5)+2;
+            random_num=random.nextInt(4)+1;
             if(a==0&&hot>30) {
                 Intent intent = new Intent(this, weather_1.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -500,7 +522,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==2) {
+            else if(random_num==1&&hot>23) {
                 Intent intent = new Intent(this, stroll.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -508,7 +530,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==3) {
+            else if(random_num==2) {
                 Intent intent = new Intent(this, read_book.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -516,7 +538,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==5) {
+            else if(random_num==3) {
                 Intent intent = new Intent(this, have_plan.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -524,23 +546,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==6&&to>=12) {
-                Intent intent = new Intent(this, lunch.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                builder.setContentIntent(pendingIntent);
-                builder.setAutoCancel(true);
-                Notification notification = builder.build();
-                notificationManager.notify(mnow, notification);
-            }
-            else if(random_num==6&&to<=12) {
-                Intent intent = new Intent(this, lunch.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                builder.setContentIntent(pendingIntent);
-                builder.setAutoCancel(true);
-                Notification notification = builder.build();
-                notificationManager.notify(mnow, notification);
-            }
-            else if(random_num==7) {
+            else if(random_num==4) {
                 Intent intent = new Intent(this, bedding.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -548,7 +554,28 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==8) {
+        }
+        else if(to>=12&&to<=17){ //오후
+            Random random=new Random();
+            random_num=random.nextInt(9)+2;
+
+            if(random_num==1) {
+                Intent intent = new Intent(this,ingredient.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==2) {
+                Intent intent = new Intent(this, lunch.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==3) {
                 Intent intent = new Intent(this, house.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -556,15 +583,39 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==9) {
-                Intent intent = new Intent(this, ingredient.class);
+            else if(random_num==4) {
+                Intent intent = new Intent(this, read_book.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
                 builder.setAutoCancel(true);
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
-            else if(random_num==10) {
+            else if(random_num==5&&hot>23) {
+                Intent intent = new Intent(this, stroll.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==6) {
+                Intent intent = new Intent(this, hbp.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==7) {
+                Intent intent = new Intent(this, diabetes.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
+            else if(random_num==8) {
                 Intent intent = new Intent(this, nail.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
@@ -572,10 +623,18 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
                 Notification notification = builder.build();
                 notificationManager.notify(mnow, notification);
             }
+            else if(random_num==9) {
+                Intent intent = new Intent(this, bedding.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                Notification notification = builder.build();
+                notificationManager.notify(mnow, notification);
+            }
         }
-        else if(to>=18&&to<=23){
+        else if(to>=18&&to<=23){   //저녁
             Random random=new Random();
-            random_num=random.nextInt(3)+1;
+            random_num=random.nextInt(4)+1;
             if(random_num==1) {
                 Intent intent = new Intent(this, today_ending.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);

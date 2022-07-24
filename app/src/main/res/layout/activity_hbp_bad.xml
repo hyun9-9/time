@@ -12,7 +12,7 @@
         android:layout_width="340dp"
         android:layout_height="79dp"
         android:gravity="center"
-        android:text="혈압 올바르게 재는 법"
+        android:text="혈압 수치가 나쁘다면"
         android:textAlignment="center"
         android:textSize="25sp"
         android:textColor="#DFDDDD"

@@ -74,9 +74,14 @@ public class medical extends AppCompatActivity {
             }
         });
         arm.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "서비스 예정 중 입니다.", Toast.LENGTH_SHORT).show();
+                communication.up_A();
+                communication.get_E("93");
+
+                //머리가 아프다는걸 웹사이트로 전송
+                finish();
             }
         });
         leg.setOnClickListener(new View.OnClickListener() {

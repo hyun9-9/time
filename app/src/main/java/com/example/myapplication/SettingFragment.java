@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,11 +57,33 @@ public class SettingFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    MainActivity mainActivity;
 
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        mainActivity=(MainActivity) getActivity();
+    }
+    @Override
+    public void onDetach(){
+        super.onDetach();
+        mainActivity=null;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_setting, container, false);
+        TextView a= rootView.findViewById(R.id.image_index);
+        if(getArguments() != null) {
+            String co = getArguments().getString("color");
+            if(co=="0"){
+                a.setTextColor((Color.parseColor("#ffffff")));
+            }
+            else if(co=="1"){
+                a.setTextColor((Color.parseColor("#000000")));
+            }
+        }
+        return rootView;
     }
 }

@@ -15,6 +15,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/image_index"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ADOPTABLE_PROBLEM:\n
