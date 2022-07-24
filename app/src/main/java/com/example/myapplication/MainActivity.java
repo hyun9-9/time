@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
     SettingFragment settingFragment;
     sleepFragment sleepFragment;
     String wp,wp2,st,st2;
+    int random_in=0;
     int in=0,random_num,a=0,hot=0,aq=0;
     public static Context context_main;
     Handler mhandler =new Handler(Looper.getMainLooper());
@@ -511,9 +512,17 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
         catch (Exception e){
 
         }
+
+        Random random=new Random();
         if(to>=6&&to<=11) {
-            Random random=new Random();
-            random_num=random.nextInt(4)+1;
+            while (true){
+                random_num=random.nextInt(4)+1;
+                if(random_in != random_num){
+                    break;
+                }
+
+            }
+            random_in=random_num;
             if(a==0&&hot>30) {
                 Intent intent = new Intent(this, weather_1.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -556,9 +565,15 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             }
         }
         else if(to>=12&&to<=17){ //오후
-            Random random=new Random();
-            random_num=random.nextInt(9)+2;
+            while (true){
+                random_num=random.nextInt(9)+1;
+                if(random_in!= random_num){
+                    break;
+                }
 
+            }
+
+            random_in=random_num;
             if(random_num==1) {
                 Intent intent = new Intent(this,ingredient.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -633,8 +648,14 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
             }
         }
         else if(to>=18&&to<=23){   //저녁
-            Random random=new Random();
-            random_num=random.nextInt(4)+1;
+            while (true){
+                random_num=random.nextInt(4)+1;
+                if(random_in!= random_num){
+                    break;
+                }
+
+            }
+            random_in=random_num;
             if(random_num==1) {
                 Intent intent = new Intent(this, today_ending.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, mnow, intent, PendingIntent.FLAG_UPDATE_CURRENT);
