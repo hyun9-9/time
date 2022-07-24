@@ -426,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements SendEventListener
 }
     public void Alarm(){
         Random random=new Random();
-        random_num=random.nextInt(20)+10;
+        random_num=random.nextInt(3600)+1800;
         random_num*=1000;
 
 
