@@ -77,6 +77,7 @@ public class InfoFragment extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                Toast.makeText(getActivity(), "신고가 완료되었습니다..", Toast.LENGTH_SHORT).show();
                 communication.up_A();
                 communication.get_E("99");
             }
